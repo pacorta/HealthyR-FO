@@ -1,6 +1,7 @@
 projectEnv/
 test.py
 test2.py
-main/
 project/
 main.py
+static/Spinning3.wav
+static/spinsound.mp3
