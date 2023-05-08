@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Healthy Roulette</title>
+	<link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		
+		body {
+			font-family: 'Helvetica Neue', sans-serif;
+			color: #444;
+			background-color: #d1d1d1;
+		}
+
+		header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px;
+			background-color: #1ABC9C;
+			color: white;
+			text-align: center;
+		}
+
+		h1 {
+			font-family: 'Bubblegum Sans', cursive;
+			font-size: 48px;
+			line-height: 1.2;
+			margin: 0;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+
+		nav {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 10px;
+			background-color: white;
+			box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+		}
+
+		nav a {
+			display: inline-block;
+			padding: 10px 20px;
+			margin: 0 10px;
+			color: #1ABC9C;
+			font-size: 18px;
+			font-weight: bold;
+			text-decoration: none;
+			border-radius: 20px;
+			transition: background-color 0.2s ease;
+		}
+
+		nav a:hover {
+			background-color: #1ABC9C;
+			color: white;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 50px;
+		}
+
+		.bubble-letters {
+			font-family: 'Bubblegum Sans', cursive;
+			font-size: 60px;
+			color: white;
+			background-color: #1ABC9C;
+			padding: 20px 40px;
+			border: none;
+			border-radius: 50px;
+			box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+			cursor: pointer;
+			outline: none;
+			transition: transform 0.2s ease;
+		}
+
+		.bubble-letters:hover {
+			transform: scale(1.05);
+		}
+
+		.spinning {
+			border-radius: 50%;
+    		width: 300px;
+    		height: 300px;
+			animation: spin 3s linear infinite;
+		}
+
+		@keyframes spin {
+			from {transform: rotate(0deg);}
+			to {transform: rotate(360deg);}
+		}
+	</style>
+
+    <title>Audio</title>
+
+</head>
+<body>
+
+    <audio controls loop autoplay hidden>
+        <source src="static/spinsound.mp3" type="audio/mp3">
+    </audio>
+
+	<header style="text-align: center;">
+		<h1>~~~~~~~~~~~WELCOME TO THE HEALTHY ROULETTE~~~~~~~~~~~</h1>
+	</header>
+
+	<br><div style="text-align: center;">
+		<form action="/form" method="POST" onsubmit="spinButton.disabled = true; setTimeout(function(){ window.location.href='/meal' }, 30000000); return true;">
+			<button id="spinButton" class="bubble-letters" type="submit">Click to Spin!</button>
+		</form>
+	</div>
+
+	<br><div style="text-align: center;">
+		<img src="static/spinning.gif" alt="wheel" class="spinning">
+	</div>
+
+	<footer class="footer">
+		<div class="container">
+			<p>
+				Copyright © 2023
+				<a href="#">Meal Roulette</a> | All rights reserved.
+			</p>
+		</div>
+	</footer>
+
+	<script>
+		// Get the audio element
+		var audioElement = document.getElementById("spinsound");
+		// Wait for it to load and play it
+		audioElement.addEventListener("canplaythrough", function() {
+			audioElement.play();
+		});
+	</script>
+
+</body>
+</html>

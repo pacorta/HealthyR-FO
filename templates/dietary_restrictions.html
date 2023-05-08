@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="static/style1.css">
+    <meta charset="UTF-8">
+	<title>Dietary Restrictions Form</title>
+	<style>
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+			font-family: Arial, sans-serif;
+			font-size: 18px;
+		}
+		label {
+		margin-top: 20px;
+		font-weight: bold;
+	}
+
+	input[type="checkbox"] {
+		margin-left: 10px;
+	}
+
+	button[type="submit"] {
+		margin-top: 30px;
+		padding: 10px 20px;
+		font-size: 18px;
+		background-color: #1ABC9C;
+		border: none;
+		border-radius: 5px;
+		color: white;
+		cursor: pointer;
+		transition: background-color 0.3s;
+	}
+
+	button[type="submit"]:hover {
+		background-color: #16A085;
+	}
+
+	h1 {
+		text-align: center;
+		margin-top: 50px;
+		font-family: 'Helvetica Neue', sans-serif;
+		font-size: 36px;
+		font-weight: bold;
+		color: #1ABC9C;
+	}
+
+	p {
+		text-align: center;
+		margin-top: 20px;
+		font-family: Arial, sans-serif;
+		font-size: 18px;
+		color: #000000;
+	}
+</style>
+
+<title>Audio</title>
+
+</head>
+<body>
+
+	<audio controls autoplay hidden>
+		<source src="static/spinning3.wav" type="audio/wav">        
+	</audio>
+
+	</div>
+	
+	<h1>Let's Personalize Your Meal Plan!</h1>
+	<p>We want to make sure your meal plan is tailored to your needs. <br>Please check any box from which we can refrain from:</p>
+	<form action="/meal" method="POST">
+		<label for="gluten-free">
+			<input type="checkbox" id="gluten-free" name="gluten-free"> Gluten-free
+		</label>
+		<label for="vegetarian">
+			<input type="checkbox" id="vegetarian" name="vegetarian"> Vegetarian
+		</label>
+	
+		<label for="vegan">
+			<input type="checkbox" id="vegan" name="vegan"> Vegan
+		</label>
+	
+		<label for="nut-free">
+			<input type="checkbox" id="nut-free" name="nut-free"> Nut-free
+		</label>
+	
+		<label for="other">
+			<input type="checkbox" id="other" name="other"> Other (please specify):
+			<input type="text" id="other-text" name="other-text">
+		</label>
+	
+		<button type="submit">Submit</button>
+	</form>
+	</body>
+	</html>
+		

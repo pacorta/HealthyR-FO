@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="static/style2.css">
+    <meta charset="UTF-8">
+    <title>Generated Meal</title>
+
+    <style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		
+		body {
+			font-family: 'Helvetica Neue', sans-serif;
+			color: #444;
+			background-color: #6dc993;
+		}
+
+		footer {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px;
+			background-color: #1ABC9C;
+			color: white;
+		}
+
+		h1 {
+			font-family: 'Bubblegum Sans', cursive;
+			font-size: 48px;
+			line-height: 1.2;
+			margin: 0;
+
+		}
+
+		h3 {
+			font-family: 'Bubblegum Sans', cursive;
+			font-size: 25px;
+			line-height: 1.2;
+			margin: 0;
+			letter-spacing: 2px;
+		}
+
+		nav {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 10px;
+			background-color: white;
+			box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+		}
+
+		nav a {
+			display: inline-block;
+			padding: 10px 20px;
+			margin: 0 10px;
+			color: #1ABC9C;
+			font-size: 18px;
+			font-weight: bold;
+			text-decoration: none;
+			border-radius: 20px;
+			transition: background-color 0.2s ease;
+		}
+
+		nav a:hover {
+			background-color: #1ABC9C;
+			color: white;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 50px;
+		}
+
+		.bubble-letters {
+			font-family: 'Bubblegum Sans', cursive;
+			font-size: 60px;
+			color: rgb(65, 56, 56);
+			padding: 20px 40px;
+			border: none;
+			border-radius: 50px;
+			box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+			cursor: pointer;
+			outline: none;
+			transition: transform 0.2s ease;
+		}
+
+		.bubble-letters:hover {
+			transform: scale(1.05);
+		}
+
+
+		@keyframes spin {
+			from {transform: rotate(0deg);}
+			to {transform: rotate(360deg);}
+		}
+	</style>
+
+    <title>Audio</title>
+
+</head>
+<body>
+
+    <audio controls autoplay hidden>
+        <source src="static/yum.wav" type="audio/wav">        
+    </audio>
+
+    <h1>We believe you might like:</h1><br>
+    <p>{{ meal }}</p><br>
+    <h1>Learn to make it:</h1><br>
+    <iframe width="560" height="315" src="{{ video_url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+    <button onclick="location.reload();">Not feeling this one? Click here to refresh.</button>
+
+    <footer style="text-align: right;">
+		<h3>~~~~~~~~~~~~~Like this one? Share with your friends:</h3>
+        <nav>
+			<a href="https://www.facebook.com">Facebook</a>
+			<a href="https://www.instagram.com">Instagram</a>
+			<a href="https://www.twitter.com">Twitter</a>
+		</nav>
+	</footer>
+</body>
+</html>
